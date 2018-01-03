@@ -24,9 +24,7 @@ public class NinjaGold {
 	public ArrayList getMessage() {
 		return message;
 	}
-//	public void setMessage(ArrayList message) {
-//		this.message = message;
-//	}
+
 	@RequestMapping("")
 	public String index() {
 		return "index";
@@ -47,14 +45,10 @@ public class NinjaGold {
 		System.out.println("houseValue: " + house);
 		System.out.println("casinoValue: " + casino);
 		if(farm.equals("farmValue")) {
-			System.out.println("helooo:");
 			this.gold += farmRandom;
 			this.message.add("you won: " + this.gold + " golds from the farm!");
 			session.setAttribute("gold", getGold());
-			
 			session.setAttribute("message", getMessage());
-			System.out.println("you won: " + this.gold + " golds from the farm!");
-			
 			return "redirect:/";
 		}
 		else if(cave.equals("caveValue")) {
